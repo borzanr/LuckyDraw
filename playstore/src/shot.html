@@ -1,0 +1,184 @@
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    background: #0B0F14;
+    font-family: "Segoe UI", system-ui, Arial, sans-serif;
+    position: relative;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .halo-top {
+    position: absolute; left: 50%; top: -420px; transform: translateX(-50%);
+    width: 1180px; height: 900px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0,229,255,.20) 0%, rgba(0,229,255,.05) 50%, rgba(0,229,255,0) 72%);
+  }
+  .halo-bottom {
+    position: absolute; left: 50%; bottom: -520px; transform: translateX(-50%);
+    width: 1300px; height: 900px; border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(180,255,57,.14) 0%, rgba(180,255,57,0) 68%);
+  }
+  .confetti { position: absolute; border-radius: 4px; }
+
+  header { position: relative; text-align: center; padding: 110px 70px 0; flex: none; }
+  h1 {
+    font-size: 78px; font-weight: 800; letter-spacing: -2.2px; line-height: 1.08;
+    color: #E8EEF5; margin: 0 0 22px;
+  }
+  h1 em { font-style: normal; color: #B4FF39; }
+  .sub { font-size: 35px; font-weight: 500; color: #93A1B1; margin: 0; line-height: 1.35; }
+
+  /* Moldura do aparelho. A imagem é ancorada no topo e o container recorta o
+     rodapé, onde fica o banner de anúncio. */
+  .phone {
+    position: relative; margin: auto 0;
+    width: 720px;
+    border-radius: 46px; overflow: hidden;
+    border: 9px solid #232D39;
+    box-shadow: 0 0 0 2px rgba(0,229,255,.16), 0 40px 90px rgba(0,0,0,.65),
+                0 0 120px rgba(0,229,255,.10);
+    background: #0B0F14;
+  }
+  .phone img { display: block; width: 100%; height: auto; }
+
+  /* Slide final: sem print, só o pitch */
+  .closing { position: relative; text-align: center; padding: 0 90px; margin: auto 0; }
+  .uses { display: flex; flex-direction: column; gap: 26px; margin-top: 30px; }
+  .use {
+    display: flex; align-items: center; gap: 26px;
+    background: #141A21; border: 2px solid #232D39; border-radius: 26px;
+    padding: 30px 34px; text-align: left;
+  }
+  .use b { font-size: 38px; font-weight: 700; color: #E8EEF5; display: block; }
+  .use span { font-size: 28px; color: #93A1B1; }
+  .dot {
+    width: 20px; height: 20px; border-radius: 50%; flex: none;
+    background: #B4FF39; box-shadow: 0 0 20px rgba(180,255,57,.8);
+  }
+  .dot.cy { background: #00E5FF; box-shadow: 0 0 20px rgba(0,229,255,.8); }
+  .dot.pu { background: #A855F7; box-shadow: 0 0 20px rgba(168,85,247,.8); }
+  .hidden { display: none; }
+</style>
+
+<div class="halo-top"></div>
+<div class="halo-bottom"></div>
+
+<div class="confetti" style="left:40px;  top:62px;  width:34px; height:15px; background:#00E5FF; transform:rotate(-24deg);"></div>
+<div class="confetti" style="left:1006px; top:96px;  width:28px; height:14px; background:#A855F7; transform:rotate(32deg);"></div>
+<div class="confetti" style="left:60px;  top:640px;  width:24px; height:12px; background:#FFD166; transform:rotate(15deg);"></div>
+<div class="confetti" style="left:986px; top:760px;  width:20px; height:20px; border-radius:50%; background:#00E5FF; opacity:.7;"></div>
+<div class="confetti" style="left:52px;  top:1290px; width:18px; height:18px; border-radius:50%; background:#A855F7; opacity:.75;"></div>
+<div class="confetti" style="left:972px; top:1470px; width:26px; height:13px; background:#B4FF39; transform:rotate(-38deg);"></div>
+
+<header>
+  <h1 id="title"></h1>
+  <p class="sub" id="sub"></p>
+</header>
+
+<div class="phone" id="phone"><img id="shot" alt=""></div>
+
+<div class="closing hidden" id="closing">
+  <svg width="230" height="230" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="die" x1="14%" y1="0%" x2="86%" y2="100%">
+        <stop offset="0%" stop-color="#D4FF6E"/>
+        <stop offset="46%" stop-color="#B4FF39"/>
+        <stop offset="100%" stop-color="#7BD400"/>
+      </linearGradient>
+      <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+        <feGaussianBlur stdDeviation="14" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g transform="rotate(-11 150 150)" filter="url(#glow)">
+      <rect x="34" y="34" width="232" height="232" rx="54" fill="url(#die)"/>
+      <g fill="#0B0F14">
+        <circle cx="95" cy="95" r="23"/><circle cx="205" cy="95" r="23"/>
+        <circle cx="150" cy="150" r="23"/>
+        <circle cx="95" cy="205" r="23"/><circle cx="205" cy="205" r="23"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="uses">
+    <div class="use"><i class="dot"></i><div><b>Rifa e sorteio</b><span>Números de 1 a quanto você quiser</span></div></div>
+    <div class="use"><i class="dot cy"></i><div><b>Amigo secreto</b><span>Cole a lista e deixe o app decidir</span></div></div>
+    <div class="use"><i class="dot pu"></i><div><b>Gincana e jogos</b><span>Times, ordem de jogada, quem paga a conta</span></div></div>
+  </div>
+</div>
+
+<script>
+  // O crop é por print: o banner de anúncio aparece numa altura diferente em
+  // cada tela, e o recorte tem que ficar acima dele.
+  var SLIDES = {
+    pt: {
+      dir: "shots",
+      "1": { t: "Sorteie em <em>1 toque</em>", s: "Qualquer intervalo, com ou sem repetição", img: "numbers.png", crop: 0.88 },
+      "2": { t: "Suspense e <em>confete</em>", s: "1,5 segundo de expectativa antes do ganhador", img: "result.png", crop: 0.83 },
+      "3": { t: "Cole a <em>lista de nomes</em>", s: "Uma por linha ou separadas por vírgula", img: "names.png", crop: 0.79 },
+      "4": { t: "<em>Nada</em> se perde", s: "Seus últimos 50 sorteios ficam salvos", img: "history.png", crop: 0.95 },
+      "5": {
+        t: "Para <em>qualquer</em> sorteio", s: "Sem cadastro, sem espera, funciona offline", img: null,
+        uses: [
+          ["Rifa e sorteio", "Números de 1 a quanto você quiser"],
+          ["Amigo secreto", "Cole a lista e deixe o app decidir"],
+          ["Gincana e jogos", "Times, ordem de jogada, quem paga a conta"]
+        ]
+      }
+    },
+    en: {
+      dir: "shots-en",
+      "1": { t: "Draw in <em>one tap</em>", s: "Any range, with or without repeats", img: "numbers.png", crop: 0.95 },
+      "2": { t: "Suspense and <em>confetti</em>", s: "A second and a half of build-up before the winner", img: "result.png", crop: 0.80 },
+      "3": { t: "Paste your <em>list of names</em>", s: "One per line or separated by commas", img: "names.png", crop: 0.79 },
+      "4": { t: "<em>Nothing</em> gets lost", s: "Your last 50 draws stay on the device", img: "history.png", crop: 0.95 },
+      "5": {
+        t: "For <em>any</em> draw", s: "No sign-up, no waiting, works offline", img: null,
+        uses: [
+          ["Raffles and giveaways", "Numbers from 1 to anything you need"],
+          ["Secret santa", "Paste the list and let the app decide"],
+          ["Games and teams", "Who goes first, who pays the bill"]
+        ]
+      }
+    },
+    es: {
+      dir: "shots-es",
+      "1": { t: "Sortea en <em>un toque</em>", s: "Cualquier rango, con o sin repetidos", img: "numbers.png", crop: 0.85 },
+      "2": { t: "Suspenso y <em>confeti</em>", s: "Un segundo y medio de expectativa antes del resultado", img: "result.png", crop: 0.78 },
+      "3": { t: "Pega tu <em>lista de nombres</em>", s: "Uno por línea o separados por comas", img: "names.png", crop: 0.79 },
+      "4": { t: "<em>Nada</em> se pierde", s: "Tus últimos 50 sorteos quedan en el dispositivo", img: "history.png", crop: 0.95 },
+      "5": {
+        t: "Para <em>cualquier</em> sorteo", s: "Sin registro, sin esperas, funciona sin conexión", img: null,
+        uses: [
+          ["Rifas y sorteos", "Números del 1 a donde quieras"],
+          ["Amigo secreto", "Pega la lista y deja que la app decida"],
+          ["Juegos y equipos", "Quién empieza, quién paga la cuenta"]
+        ]
+      }
+    }
+  };
+
+  var params = new URLSearchParams(location.search);
+  var requested = params.get("lang");
+  var lang = SLIDES[requested] ? requested : "pt";
+  var n = params.get("n") || "1";
+  var set = SLIDES[lang];
+  var slide = set[n];
+
+  document.getElementById("title").innerHTML = slide.t;
+  document.getElementById("sub").textContent = slide.s;
+
+  if (slide.img) {
+    document.getElementById("shot").src = set.dir + "/" + slide.img;
+    document.getElementById("phone").style.height = Math.round(720 * (2400 / 1080) * slide.crop) + "px";
+  } else {
+    document.getElementById("phone").classList.add("hidden");
+    document.getElementById("closing").classList.remove("hidden");
+
+    var rows = document.querySelectorAll(".use");
+    slide.uses.forEach(function (use, i) {
+      rows[i].querySelector("b").textContent = use[0];
+      rows[i].querySelector("span").textContent = use[1];
+    });
+  }
+</script>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Abas -->
+    <string name="tab_numbers">Números</string>
+    <string name="tab_names">Nomes</string>
+
+    <!-- Aba Números -->
+    <string name="label_min">Mínimo</string>
+    <string name="label_max">Máximo</string>
+    <string name="label_count">Quantidade</string>
+    <string name="allow_repeats">Permitir repetidos?</string>
+    <string name="draw_button">SORTEAR</string>
+
+    <!-- Aba Nomes -->
+    <string name="names_field_label">Cole os nomes</string>
+    <string name="names_placeholder">Um por linha, ou separados por vírgula</string>
+    <plurals name="names_detected">
+        <item quantity="one">%d nome detectado</item>
+        <item quantity="other">%d nomes detectados</item>
+    </plurals>
+
+    <!-- Erros -->
+    <string name="error_invalid_number">Preencha o mínimo e o máximo.</string>
+    <string name="error_range_inverted">O mínimo precisa ser menor que o máximo.</string>
+    <string name="error_count_invalid">Escolha quantos você quer sortear.</string>
+    <string name="error_count_too_large">Dá para sortear no máximo %d de uma vez.</string>
+    <string name="error_count_exceeds_range">Não há tantos números nesse intervalo. Permita repetidos ou aumente a faixa.</string>
+    <string name="error_count_exceeds_names">Não há tantos nomes na lista. Permita repetidos ou adicione mais.</string>
+    <string name="error_empty_pool">Adicione pelo menos um nome.</string>
+
+    <!-- Suspense e resultado -->
+    <string name="suspense_label">Sorteando…</string>
+    <!--
+        ImpliedQuantity: em pt-BR o "one" cobre 0 e 1, e o lint espera um %d.
+        Aqui é só o título acima do resultado, que nunca mostra a quantidade —
+        quem a exibe é o próprio resultado, logo abaixo.
+    -->
+    <plurals name="result_title" tools:ignore="ImpliedQuantity">
+        <item quantity="one">O sorteado foi</item>
+        <item quantity="other">Os sorteados foram</item>
+    </plurals>
+    <string name="action_copy">Copiar</string>
+    <string name="action_share">Compartilhar</string>
+    <string name="action_draw_again">Sortear de novo</string>
+    <string name="action_close">Fechar</string>
+    <string name="copied_message">Resultado copiado</string>
+    <string name="share_title">Compartilhar resultado</string>
+    <!-- %1$s = resultado, %2$s = link da loja -->
+    <string name="share_body">🎲 LuckyDraw — %1$s
+
+Sorteie você também: %2$s</string>
+
+    <!-- Histórico -->
+    <string name="history_title">Histórico</string>
+    <string name="history_open">Abrir histórico</string>
+    <string name="history_empty">Nenhum sorteio ainda. Os seus últimos %d sorteios aparecem aqui.</string>
+    <string name="history_clear">Limpar histórico</string>
+    <string name="history_numbers_input">%1$d – %2$d</string>
+    <plurals name="history_names_input">
+        <item quantity="one">%d nome</item>
+        <item quantity="other">%d nomes</item>
+    </plurals>
+    <string name="history_type_numbers">Números</string>
+    <string name="history_type_names">Nomes</string>
+</resources>

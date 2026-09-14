@@ -1,0 +1,49 @@
+1. Sorteador de Números e Nomes (Clean & Pop)
+
+Um app direto ao ponto para resolver sorteios cotidianos (rifas, amigo secreto local, dinâmicas de grupo, jogos).
+
+Como funciona: O usuário abre o app, digita um intervalo numérico (ex: 1 a 100) ou cola uma lista de nomes e clica em "Sortear".
+
+Por que viraliza: É o tipo de app utilitário que as pessoas buscam na Google Play na hora do aperto (ex: "preciso sortear uma rifa agora"). Nos EUA e Brasil, o apelo visual minimalista e a rapidez atraem muitos downloads orgânicos.
+
+Desenvolvimento: Muito simples. Você usa apenas a lógica interna do dispositivo (gerador de números aleatórios) e armazena os nomes temporariamente na memória local.Onde entram os anúncios: Um banner discreto no rodapé e um anúncio de vídeo (interstitial) em tela cheia que aparece logo após o usuário clicar no botão de sortear.
+
+
+🎨 O Design e Interface(Simples e Atraente):
+Para viralizar, o app não pode parecer antigo. Aposte em um design moderno: Modo Escuro (Dark Mode) por padrão, cantos arredondados, fontes limpas (como a Inter ou Roboto) e cores neon vibrantes (como verde-limão, roxo ou ciano) para os botões principais.
+O app terá apenas duas abas principais (com navegação por deslize ou botões no topo):
+	Aba 1: Números (Campos para "Mínimo", "Máximo", "Quantidade de números" e o botão "Sortear").
+	Aba 2: Nomes (Um campo de texto grande para colar os nomes e o botão "Sortear").
+
+🧠 A Lógica do Código (Sem Banco de Dados)
+
+Como não há cadastro, tudo roda na memória RAM do celular de forma instantânea
+
+- Sorteio de Números: Você usará a função nativa do Kotlin/Flutter para gerar números aleatórios dentro de um intervalo.
+Dica de Ouro: Adicione uma caixinha de seleção (Checkbox) escrita "Permitir números repetidos?". É um recurso muito pedido pelos usuários e facílimo de programar usando uma condicional (if/else).
+- Sorteio de Nomes: O usuário digita os nomes separados por linha (Enter) ou por vírgula. O seu código vai quebrar esse texto em uma lista (usando .split("\n") ou .split(",")), escolher um item aleatório dessa lista e exibir na tela.
+- Salvar o Histórico: Para o usuário não perder os últimos sorteios se fechar o app sem querer, use o SharedPreferences (ou local storage). Sempre que um sorteio for feito, salve o resultado localmente no aparelho.
+
+
+💰 A Estratégia de Anúncios (Onde ganhar dinheiro?)
+
+Para maximizar os ganhos sem estragar a experiência (o que faria as pessoas desinstalarem), usaremos duas abordagens:
+
+1. Banner na Base (AdMob Banner Ads): Um anúncio pequeno e fixo bem no rodapé de todas as telas. Ele fica ali o tempo todo rendendo impressões enquanto o usuário digita os nomes.
+
+2. Anúncio de Tela Cheia com "Gatilho de Suspense" (AdMob Interstitial Ads): Esse é o que mais gera receita. Em vez de mostrar o anúncio do nada, use a mecânica do suspense:
+
+	a. O usuário clica em "Sortear".
+	b. O app exibe uma animação rápida na tela (ex: uma roleta girando ou números mudando rápido por 1.5 segundos) para criar expectativa.
+	c. O anúncio de tela cheia entra exatamente depois desse suspense, mas antes de mostrar o nome/número ganhador. Quando o usuário fecha o anúncio, o resultado salta na tela com confetes.
+	d. Regra de ouro: Limite a frequência desse anúncio (ex: no máximo 1 a cada 3 sorteios) para não irritar.
+
+
+Marca:
+
+Na Google Play dos EUA:
+	Título: LuckyDraw (ou o que você escolher)
+	Subtítulo: Easy Number & Name Picker
+Na Google Play do Brasil:
+	Título: LuckyDraw
+	Subtítulo: Sorteador de Nomes e Números

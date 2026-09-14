@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nome de marca: igual em todos os idiomas, por isso não é traduzível. -->
+    <string name="app_name" translatable="false">LuckyDraw</string>
+
+    <!-- Tabs -->
+    <string name="tab_numbers">Numbers</string>
+    <string name="tab_names">Names</string>
+
+    <!-- Numbers tab -->
+    <string name="label_min">Minimum</string>
+    <string name="label_max">Maximum</string>
+    <string name="label_count">How many</string>
+    <string name="allow_repeats">Allow repeats?</string>
+    <string name="draw_button">DRAW</string>
+
+    <!-- Names tab -->
+    <string name="names_field_label">Paste the names</string>
+    <string name="names_placeholder">One per line, or separated by commas</string>
+    <plurals name="names_detected">
+        <item quantity="one">%d name detected</item>
+        <item quantity="other">%d names detected</item>
+    </plurals>
+
+    <!-- Errors -->
+    <string name="error_invalid_number">Fill in the minimum and the maximum.</string>
+    <string name="error_range_inverted">The minimum must be lower than the maximum.</string>
+    <string name="error_count_invalid">Choose how many to draw.</string>
+    <string name="error_count_too_large">You can draw up to %d at a time.</string>
+    <string name="error_count_exceeds_range">There aren\'t that many numbers in this range. Allow repeats or widen it.</string>
+    <string name="error_count_exceeds_names">There aren\'t that many names on the list. Allow repeats or add more.</string>
+    <string name="error_empty_pool">Add at least one name.</string>
+
+    <!-- Suspense and result -->
+    <string name="suspense_label">Drawing…</string>
+    <plurals name="result_title">
+        <item quantity="one">The winner is</item>
+        <item quantity="other">The winners are</item>
+    </plurals>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+    <string name="action_draw_again">Draw again</string>
+    <string name="action_close">Close</string>
+    <string name="copied_message">Result copied</string>
+    <string name="share_title">Share result</string>
+    <!-- %1$s = result, %2$s = store link -->
+    <string name="share_body">🎲 LuckyDraw — %1$s
+
+Draw yours too: %2$s</string>
+    <string name="play_store_url" translatable="false">https://play.google.com/store/apps/details?id=%s</string>
+
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_open">Open history</string>
+    <string name="history_empty">No draws yet. Your last %d draws show up here.</string>
+    <string name="history_clear">Clear history</string>
+    <string name="history_numbers_input">%1$d – %2$d</string>
+    <plurals name="history_names_input">
+        <item quantity="one">%d name</item>
+        <item quantity="other">%d names</item>
+    </plurals>
+    <string name="history_type_numbers">Numbers</string>
+    <string name="history_type_names">Names</string>
+</resources>

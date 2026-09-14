@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Español neutro: sirve tanto a España como a América Latina. El vocabulario de
+    la app (sortear, números, nombres) no cambia de forma relevante entre regiones.
+-->
+<resources>
+    <!-- Pestañas -->
+    <string name="tab_numbers">Números</string>
+    <string name="tab_names">Nombres</string>
+
+    <!-- Pestaña Números -->
+    <string name="label_min">Mínimo</string>
+    <string name="label_max">Máximo</string>
+    <string name="label_count">Cuántos</string>
+    <string name="allow_repeats">¿Permitir repetidos?</string>
+    <string name="draw_button">SORTEAR</string>
+
+    <!-- Pestaña Nombres -->
+    <string name="names_field_label">Pega los nombres</string>
+    <string name="names_placeholder">Uno por línea o separados por comas</string>
+    <plurals name="names_detected">
+        <item quantity="one">%d nombre detectado</item>
+        <item quantity="other">%d nombres detectados</item>
+    </plurals>
+
+    <!-- Errores -->
+    <string name="error_invalid_number">Completa el mínimo y el máximo.</string>
+    <string name="error_range_inverted">El mínimo tiene que ser menor que el máximo.</string>
+    <string name="error_count_invalid">Elige cuántos quieres sortear.</string>
+    <string name="error_count_too_large">Se pueden sortear hasta %d a la vez.</string>
+    <string name="error_count_exceeds_range">No hay tantos números en ese rango. Permite repetidos o amplíalo.</string>
+    <string name="error_count_exceeds_names">No hay tantos nombres en la lista. Permite repetidos o agrega más.</string>
+    <string name="error_empty_pool">Agrega al menos un nombre.</string>
+
+    <!--
+        Suspenso y resultado.
+        "El resultado es" en lugar de "El ganador es": el español marca género y
+        "ganador" daría por sentado que la persona sorteada es hombre.
+    -->
+    <string name="suspense_label">Sorteando…</string>
+    <plurals name="result_title">
+        <item quantity="one">El resultado es</item>
+        <item quantity="other">Los resultados son</item>
+    </plurals>
+    <string name="action_copy">Copiar</string>
+    <string name="action_share">Compartir</string>
+    <string name="action_draw_again">Sortear otra vez</string>
+    <string name="action_close">Cerrar</string>
+    <string name="copied_message">Resultado copiado</string>
+    <string name="share_title">Compartir resultado</string>
+    <!-- %1$s = resultado, %2$s = enlace de la tienda -->
+    <string name="share_body">🎲 LuckyDraw — %1$s
+
+Sortea tú también: %2$s</string>
+
+    <!-- Historial -->
+    <string name="history_title">Historial</string>
+    <string name="history_open">Abrir historial</string>
+    <string name="history_empty">Todavía no hay sorteos. Tus últimos %d sorteos aparecen aquí.</string>
+    <string name="history_clear">Borrar historial</string>
+    <string name="history_numbers_input">%1$d – %2$d</string>
+    <plurals name="history_names_input">
+        <item quantity="one">%d nombre</item>
+        <item quantity="other">%d nombres</item>
+    </plurals>
+    <string name="history_type_numbers">Números</string>
+    <string name="history_type_names">Nombres</string>
+</resources>
