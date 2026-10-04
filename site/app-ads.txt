@@ -1,0 +1,4 @@
+# app-ads.txt — autoriza o Google a vender o inventário de anúncios dos apps
+# publicados por esta conta AdMob. Exigido pelo AdMob para verificar o app.
+# Formato: domínio do exchange, ID do publisher, tipo de relação, ID da autoridade
+google.com, pub-5043299631567488, DIRECT, f08c47fec0942fa0
